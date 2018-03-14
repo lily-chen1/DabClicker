@@ -1,14 +1,14 @@
 import React from "react";
 
-export class Child extends React.Component {
+export class Reset extends React.Component {
   render() {
     return (
-      <div className="dabbutton">
+      <div id="resetbutton">
         <button
           className="btn btn-outline-success"
           onClick={this.props.onClick}
         >
-          dab
+          reset
         </button>
       </div>
     );

@@ -1,14 +1,14 @@
 import React from "react";
 
-export class Child extends React.Component {
+export class BuyButton extends React.Component {
   render() {
     return (
-      <div className="dabbutton">
+      <div id="clickbutton">
         <button
-          className="btn btn-outline-success"
+          className="btn btn-outline-warning buybutton"
           onClick={this.props.onClick}
         >
-          dab
+          Buy
         </button>
       </div>
     );

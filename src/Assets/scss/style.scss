@@ -1,19 +1,20 @@
-.clickdisplay {
-  margin: auto;
-  //   border: 4px red solid;
-  text-align: center;
-  line-height: 200px;
-  width: 800px;
-  height: 200px;
-  font-size: 3em;
-  display: block;
+$Green: #4caf50;
+$Amber: #ffc107;
+
+.buybutton {
+  border-color: $Amber !important;
+  color: $Amber !important;
 }
 
-.clickbutton {
+.otherbuybutton {
+  border-color: $Amber !important;
+}
+
+.dabbutton {
   margin: auto;
-  height: 200px;
-  width: 50%;
-  //   border: 4px red solid;
+  height: 100px;
+  width: 20%;
+  // border: 4px red solid;
   text-align: center;
 
   button {
@@ -22,4 +23,88 @@
     text-align: center;
     font-size: 1.5em;
   }
+}
+
+#standimg {
+  height: 60px;
+  width: 60px;
+}
+
+#clickdisplay {
+  margin: 0 50%;
+  //   border: 4px red solid;
+  text-align: center;
+  line-height: 150px;
+  width: 800px;
+  height: 100px;
+  font-size: 3em;
+  display: block;
+}
+
+#perseconddisplay {
+  margin: 0 50%;
+  //   border: 4px red solid;
+  text-align: center;
+  line-height: 50px;
+  width: 800px;
+  height: 50px;
+  font-size: 2em;
+  display: block;
+  font-style: italic;
+  color: rgb(179, 179, 179);
+}
+
+#clickbutton {
+  margin: auto;
+  // height: 200px;
+  // width: 20%;
+  //   border: 4px red solid;
+  text-align: center;
+  display: inline;
+
+  button {
+    // height: 100px;
+    // width: 200px;
+    text-align: center;
+    font-size: 1.5em;
+  }
+}
+
+#resetbutton {
+  margin: auto;
+  height: 100px;
+  width: 20%;
+  // border: 4px red solid;
+  text-align: center;
+
+  button {
+    height: 100px;
+    width: 200px;
+    text-align: center;
+    font-size: 1.5em;
+  }
+}
+
+#buttongrid {
+  display: grid;
+}
+
+#dabdisplayer {
+  height: 200px;
+  // width: 200px;
+
+  img {
+    height: 30px;
+    width: 30px;
+  }
+}
+
+#card {
+  width: 30vw;
+  min-width: 20rem;
+}
+
+#carddisplay {
+  margin-left: 1vw;
+  margin-top: 1rem;
 }

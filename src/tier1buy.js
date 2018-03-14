@@ -1,14 +1,14 @@
 import React from "react";
 
-export class Child extends React.Component {
+export class Tier1Buy extends React.Component {
   render() {
     return (
-      <div className="dabbutton">
+      <div id="clickbutton">
         <button
           className="btn btn-outline-success"
           onClick={this.props.onClick}
         >
-          dab
+          buy a dabber (5 dabs)
         </button>
       </div>
     );
