@@ -7,11 +7,32 @@ export class DabDisplayer extends React.Component {
     for (let index = 0; index < this.props.numberOfDabbers; index++) {
       targets.push(<img src={require("./Icons/stand.png")} alt="dab stand" />);
     }
+    function isOverflown(element) {
+      return (
+        element.scrollHeight > element.clientHeight ||
+        element.scrollWidth > element.clientWidth
+      );
+    }
+    if (isOverflown(DabDisplayer)) {
+      alert("nice");
+    }
 
     return (
-      <div className="float-left" id="carddisplay">
-        <div className="card mb-3 otherbuybutton" id="card">
-          <div id="dabdisplayer" className="buybutton rounded card-header">
+      <div
+        className="float-left"
+        id="carddisplay"
+        onOverflow={this.props.onOverflow}
+      >
+        <div
+          className="card mb-3 otherbuybutton"
+          id="card"
+          onOverflow={this.props.onOverflow}
+        >
+          <div
+            id="dabdisplayer"
+            className="buybutton rounded card-header"
+            onOverflow={this.props.onOverflow}
+          >
             {targets}
           </div>
           <div className="card-body">

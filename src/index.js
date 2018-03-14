@@ -21,6 +21,10 @@ class Nice extends React.Component {
     this.handleClick = this.handleClick.bind(this);
     this.reset = this.reset.bind(this);
     this.tier1buy = this.tier1buy.bind(this);
+    this.cheat = this.cheat.bind(this);
+  }
+  cheat() {
+    this.setState({ clicks: 9999999999999999999999999999999999999999 });
   }
   handleClick(e) {
     var temp = this.state.clicks;
@@ -31,9 +35,19 @@ class Nice extends React.Component {
     this.setState({ clicks: 0 });
   }
   tier1buy() {
-    if (this.state.clicks >= 5) {
+    function isOverflown(element) {
+      return (
+        element.scrollHeight > element.clientHeight ||
+        element.scrollWidth > element.clientWidth
+      );
+    }
+    if (isOverflown(DabDisplayer)) {
+      alert("nice");
+    }
+    // alert(isOverflown(DabDisplayer));
+    if (this.state.clicks >= 10) {
       var femp = this.state.clicks;
-      femp -= 5;
+      femp -= 10;
       var hemp = this.state.dabsPerSecond;
       hemp += 0.25;
       var gemp = this.state.numberOfDabbers;
@@ -44,13 +58,17 @@ class Nice extends React.Component {
       setInterval(this.handleClick, 4000);
     }
   }
+  handleOverflow() {
+    alert("nice");
+  }
 
   render() {
     return (
-      <div id>
+      <div id="bodygrid">
         <DabDisplayer
           numberOfDabbers={this.state.numberOfDabbers}
           onClick={this.tier1buy}
+          onOverflow={this.handleOverflow}
         />
         <Counter
           clicks={this.state.clicks}
@@ -59,8 +77,7 @@ class Nice extends React.Component {
         <hr />
         <div id="buttongrid">
           <Child onClick={this.handleClick} />
-          <Reset onClick={this.reset} />
-          <Tier1Buy onClick={this.tier1buy} />
+          <Reset onClick={this.reset} onClick2={this.cheat} />
         </div>
       </div>
     );
