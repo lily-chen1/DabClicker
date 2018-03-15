@@ -1,3 +1,4 @@
+/* eslint-env browser */
 import React from "react";
 import ReactDOM from "react-dom";
 import "./Assets/css/style.min.css";
@@ -5,7 +6,6 @@ import "./css/bootstrap.min.css";
 import { Child } from "./child";
 import { Counter } from "./counter";
 import { Reset } from "./reset";
-import { Tier1Buy } from "./tier1buy";
 import { DabDisplayer } from "./dabdisplayer";
 
 class Nice extends React.Component {
@@ -13,7 +13,6 @@ class Nice extends React.Component {
     super(props);
     this.state = {
       clicks: 0,
-      targets: {},
       dabsPerSecond: 0,
       numberOfDabbers: 0
     };
@@ -26,14 +25,12 @@ class Nice extends React.Component {
   cheat() {
     this.setState({ clicks: 9999999999999999999999999999999999999999 });
   }
-  handleClick(e) {
-    var temp = this.state.clicks;
+  handleClick() {
+    let temp = this.state.clicks;
     temp++;
     this.setState({ clicks: temp });
   }
-  reset(e) {
-    this.setState({ clicks: 0 });
-  }
+
   tier1buy() {
     function isOverflown(element) {
       return (
@@ -46,18 +43,58 @@ class Nice extends React.Component {
     }
     // alert(isOverflown(DabDisplayer));
     if (this.state.clicks >= 10) {
-      var femp = this.state.clicks;
+      let femp = this.state.clicks;
       femp -= 10;
-      var hemp = this.state.dabsPerSecond;
+      let hemp = this.state.dabsPerSecond;
       hemp += 0.25;
-      var gemp = this.state.numberOfDabbers;
-      gemp++;
+      let gemp = this.state.numberOfDabbers;
+      gemp += 1;
       this.setState({ clicks: femp });
       this.setState({ dabsPerSecond: hemp });
       this.setState({ numberOfDabbers: gemp });
-      setInterval(this.handleClick, 4000);
+      this.autoDab = setInterval(() => this.handleClick(), 4000);
     }
   }
+  reset() {
+    this.setState({ clicks: 0 });
+    for (let index = 0; index < this.state.numberOfDabbers; index++) {
+      // clearInterval(this.autoDab);
+      this.autoDab.window.clearInterval(index);
+    }
+    const interval = {
+      // to keep a reference to all the intervals
+      intervals: {},
+
+      // create another interval
+      make(fun, delay) {
+        // see explanation after the code
+        const newInterval = setInterval.apply(
+          window,
+          [fun, delay].concat([].slice.call(arguments, 2))
+        );
+
+        this.intervals[newInterval] = true;
+
+        return newInterval;
+      },
+
+      // clear a single interval
+      clear(id) {
+        return clearInterval(this.intervals[id]);
+      },
+
+      // clear all intervals
+      clearAll() {
+        const all = Object.keys(this.intervals);
+        let len = all.length;
+
+        while (len-- > 0) {
+          clearInterval(all.shift());
+        }
+      }
+    };
+  }
+
   handleOverflow() {
     alert("nice");
   }

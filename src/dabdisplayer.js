@@ -1,9 +1,9 @@
 import React from "react";
-import { BuyButton } from "./buybutton.js";
+import { BuyButton } from "./buybutton";
 
 export class DabDisplayer extends React.Component {
   render() {
-    let targets = [];
+    const targets = [];
     for (let index = 0; index < this.props.numberOfDabbers; index++) {
       targets.push(<img src={require("./Icons/stand.png")} alt="dab stand" />);
     }
