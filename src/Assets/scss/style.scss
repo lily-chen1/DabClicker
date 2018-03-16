@@ -1,5 +1,14 @@
 $Green: #4caf50;
 $Amber: #ffc107;
+$Grey: rgba(163, 161, 161, 0.233);
+$Border: 2px solid $Grey;
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
 
 .buybutton {
   border-color: $Amber !important;
@@ -8,6 +17,11 @@ $Amber: #ffc107;
 
 .otherbuybutton {
   border-color: $Amber !important;
+}
+
+.verticalline {
+  border-left: $Border;
+  grid-area: 2 / 2 / span all / span 1;
 }
 
 .dabbutton {
@@ -28,12 +42,18 @@ $Amber: #ffc107;
 #bodygrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 0.5fr 3fr 3fr;
 }
 
 #standimg {
-  height: 60px;
-  width: 60px;
+  height: 50px;
+  width: 70px;
+}
+
+#counter {
+  grid-area: 1 / 1 / span 1 / span all;
+  padding-bottom: 20%;
+  border-bottom: $Border;
 }
 
 #clickdisplay {
@@ -41,23 +61,22 @@ $Amber: #ffc107;
   //   border: 4px red solid;
   text-align: center;
   line-height: 150px;
-  width: 800px;
-  height: 100px;
+  // width: 200px;
+  // height: 100px;
   font-size: 3em;
-  grid-area: 1 / 2 / 2 / 3;
 }
 
 #perseconddisplay {
   margin: auto;
+  margin-top: -40px;
   //   border: 4px red solid;
   text-align: center;
   line-height: 50px;
-  width: 800px;
+  width: 300px;
   height: 50px;
   font-size: 2em;
   font-style: italic;
   color: rgb(179, 179, 179);
-  grid-area: 1 / 2 / 2 / 3;
 }
 
 #clickbutton {
@@ -77,6 +96,7 @@ $Amber: #ffc107;
 }
 
 #resetbutton {
+  display: flex;
   margin: auto;
   height: 100px;
   width: 20%;
@@ -92,7 +112,9 @@ $Amber: #ffc107;
 }
 
 #buttongrid {
-  grid-area: 2 / 2 / span 1 / span 1;
+  grid-area: 3 / 2 / span 1 / span 1;
+  display: flex;
+  margin-top: 30%;
 }
 
 #dabdisplayer {
@@ -100,20 +122,53 @@ $Amber: #ffc107;
   // width: 200px;
 
   img {
-    height: 7.8vw;
-    width: 7.8vw;
+    height: 5.9vw;
+    width: 5.9vw;
     min-height: 100px;
     min-width: 100px;
   }
 }
 
 #card {
-  min-width: 20rem;
-  overflow: scroll;
+  // overflow: scroll;
 }
 
 #carddisplay {
-  margin-left: 1vw;
+  width: 100%;
+  // margin-top: 1rem;
+  // grid-area: 2 / 1 / span 1 / span 2;
+  // margin-left: 10%;
+  // // margin-right: 80%;
+  // padding-right: 20%;
+  padding: 3% 3%;
+}
+
+#displaycontainer {
+  // width: 100%;
   margin-top: 1rem;
-  grid-area: 1 / 1 / 2 / 2;
+  grid-area: 2 / 1 / span all / span 1;
+  margin-left: 5%;
+  margin-right: 5%;
+  // margin-right: 80%;
+  // padding-right: 20%;
+  // overflow: scroll;
+  overflow-y: scroll;
+  border: $Border;
+  border-radius: 8px;
+}
+
+#dabvisual {
+  margin-left: 3%;
+  margin-top: 10%;
+  height: 140%;
+  width: 94%;
+  grid-area: 2 / 2 / span 1 / span 1;
+  border: $Border;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    height: 30%;
+    width: 30%;
+  }
 }

@@ -16,6 +16,12 @@ export class Reset extends React.Component {
         >
           test
         </button>
+        <button
+          className="btn btn-outline-success"
+          onClick={this.props.onClick3}
+        >
+          test2
+        </button>
       </div>
     );
   }

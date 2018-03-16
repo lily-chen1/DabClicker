@@ -2,19 +2,23 @@ import React from "react";
 import { BuyButton } from "./buybutton";
 
 export class DabDisplayer extends React.Component {
+  componentDidUpdate() {
+    const element = this.element;
+    // Things involving accessing DOM properties on element
+    // In the case of what this question actually asks:
+    const hasOverflowingChildren =
+      element.offsetHeight < element.scrollHeight ||
+      element.offsetWidth < element.scrollWidth;
+
+    if (hasOverflowingChildren) {
+      alert("overflowed");
+    }
+  }
+
   render() {
     const targets = [];
     for (let index = 0; index < this.props.numberOfDabbers; index++) {
-      targets.push(<img src={require("./Icons/stand.png")} alt="dab stand" />);
-    }
-    function isOverflown(element) {
-      return (
-        element.scrollHeight > element.clientHeight ||
-        element.scrollWidth > element.clientWidth
-      );
-    }
-    if (isOverflown(DabDisplayer)) {
-      alert("nice");
+      targets.push(<img src={require("./Icons/stand2.svg")} alt="dab stand" />);
     }
 
     return (
@@ -32,6 +36,9 @@ export class DabDisplayer extends React.Component {
             id="dabdisplayer"
             className="buybutton rounded card-header"
             onOverflow={this.props.onOverflow}
+            ref={(el) => {
+              this.element = el;
+            }}
           >
             {targets}
           </div>
@@ -39,7 +46,7 @@ export class DabDisplayer extends React.Component {
             <h5 className="card-title d-inline">Dab Stand</h5>
             <img
               id="standimg"
-              src={require("./Icons/stand.png")}
+              src={require("./Icons/stand2.svg")}
               alt="dab stand"
               className="d-inline"
             />
