@@ -3,7 +3,7 @@ import React from "react";
 export class Reset extends React.Component {
   render() {
     return (
-      <div id="resetbutton">
+      <div id="resetButton">
         <button
           className="btn btn-outline-success"
           onClick={this.props.onClick}

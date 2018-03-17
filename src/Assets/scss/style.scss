@@ -1,150 +1,153 @@
-$Green: #4caf50;
-$Amber: #ffc107;
-$Grey: rgba(163, 161, 161, 0.233);
-$Border: 2px solid $Grey;
-
 html,
 body {
+  -webkit-user-select: none; /* Chrome/Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+
+  /* Rules below not implemented in browsers yet */
+  -o-user-select: none;
+  user-select: none;
+  // pointer-events: none;
   margin: 0;
   height: 100%;
   overflow: hidden;
 }
 
-.buybutton {
-  border-color: $Amber !important;
-  color: $Amber !important;
-}
+$Green: #4caf50;
+$Amber: #ffc107;
+$Grey: rgba(163, 161, 161, 0.233);
+$Border: 2px solid $Grey;
 
-.otherbuybutton {
-  border-color: $Amber !important;
-}
-
-.verticalline {
+.verticalLine {
   border-left: $Border;
   grid-area: 2 / 2 / span all / span 1;
 }
 
-.dabbutton {
-  margin: auto;
-  height: 100px;
-  width: 20%;
-  // border: 4px red solid;
-  text-align: center;
-
-  button {
-    height: 100px;
-    width: 200px;
-    text-align: center;
-    font-size: 1.5em;
-  }
-}
-
-#bodygrid {
+#bodyGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 0.5fr 3fr 3fr;
-}
-
-#standimg {
-  height: 50px;
-  width: 70px;
+  grid-template-rows: 0.5fr 7fr 0.5fr;
 }
 
 #counter {
   grid-area: 1 / 1 / span 1 / span all;
   padding-bottom: 20%;
   border-bottom: $Border;
-}
-
-#clickdisplay {
-  margin: auto;
-  //   border: 4px red solid;
+  // text-align: center;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  height: 155px;
+  // flex-direction: column;
+  // justify-content: stretch;
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
   text-align: center;
-  line-height: 150px;
-  // width: 200px;
-  // height: 100px;
-  font-size: 3em;
-}
-
-#perseconddisplay {
-  margin: auto;
-  margin-top: -40px;
-  //   border: 4px red solid;
-  text-align: center;
-  line-height: 50px;
-  width: 300px;
-  height: 50px;
-  font-size: 2em;
-  font-style: italic;
-  color: rgb(179, 179, 179);
-}
-
-#clickbutton {
-  margin: auto;
-  // height: 200px;
-  // width: 20%;
-  //   border: 4px red solid;
-  text-align: center;
-  display: inline;
-
-  button {
-    // height: 100px;
-    // width: 200px;
-    text-align: center;
-    font-size: 1.5em;
+  width: 100vw;
+  #clickDisplay {
+    //   border: 4px red solid;
+    // line-height: 150px;
+    font-size: 3rem;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+  }
+  #perSecondDisplay {
+    // margin-top: -40px;
+    // margin-left: 50%;
+    //   border: 4px red solid;
+    // line-height: 50px;
+    font-size: 2rem;
+    font-style: italic;
+    color: rgb(179, 179, 179);
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
   }
 }
 
-#resetbutton {
+#dabVisual {
+  // margin-left: 3%;
+  // margin-top: 10%;
+  margin: 0;
+  margin-bottom: -80vw;
+  // height: 140%;
+  // width: 94%;
+  grid-area: 2 / 2 / span 1 / span 1;
+  // border: $Border;
+  border-bottom: $Border;
   display: flex;
-  margin: auto;
-  height: 100px;
-  width: 20%;
-  // border: 4px red solid;
-  text-align: center;
-
-  button {
-    height: 100px;
-    width: 200px;
-    text-align: center;
-    font-size: 1.5em;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  height: 30vw;
+  img {
+    pointer-events: none;
+    height: 30%;
+    width: 30%;
   }
 }
 
-#buttongrid {
+#buttonGrid {
   grid-area: 3 / 2 / span 1 / span 1;
   display: flex;
-  margin-top: 30%;
-}
+  justify-content: center;
+  align-items: center;
+  // margin-top: 30%;
+  margin: 0px;
+  padding: 0px;
+  margin-top: -20vw;
+  .dabButton {
+    // margin: auto;
+    // height: 20px;
+    // width: 20%;
+    // border: 4px red solid;
+    text-align: center;
 
-#dabdisplayer {
-  height: 200px;
-  // width: 200px;
+    button {
+      // height: 100px;
+      // width: 200px;
+      text-align: center;
+      font-size: 1.5em;
+    }
+  }
+  #clickButton {
+    margin: 0;
+    // height: 200px;
+    // width: 20%;
+    //   border: 4px red solid;
+    text-align: center;
+    // display: inline;
 
-  img {
-    height: 5.9vw;
-    width: 5.9vw;
-    min-height: 100px;
-    min-width: 100px;
+    button {
+      // height: 100px;
+      // width: 200px;
+      text-align: center;
+      font-size: 1.5em;
+    }
+  }
+  #resetButton {
+    margin: 0;
+    display: flex;
+    // margin: auto;
+    // height: 100px;
+    width: 20%;
+    // border: 4px red solid;
+    text-align: center;
+
+    button {
+      // height: 100px;
+      // width: 200px;
+      text-align: center;
+      font-size: 1.5em;
+    }
   }
 }
 
-#card {
-  // overflow: scroll;
-}
-
-#carddisplay {
-  width: 100%;
-  // margin-top: 1rem;
-  // grid-area: 2 / 1 / span 1 / span 2;
-  // margin-left: 10%;
-  // // margin-right: 80%;
-  // padding-right: 20%;
-  padding: 3% 3%;
-}
-
-#displaycontainer {
+#displayContainer {
   // width: 100%;
+  min-width: 45vw;
   margin-top: 1rem;
   grid-area: 2 / 1 / span all / span 1;
   margin-left: 5%;
@@ -155,20 +158,40 @@ body {
   overflow-y: scroll;
   border: $Border;
   border-radius: 8px;
-}
+  .otherBuyButton {
+    border-color: $Amber !important;
+  }
+  .buyButton {
+    border-color: $Amber !important;
+    color: $Amber !important;
+  }
+  #standImg {
+    pointer-events: none;
+    height: 50px;
+    width: 70px;
+  }
+  #cardDisplay {
+    width: 100%;
+    // margin-top: 1rem;
+    // grid-area: 2 / 1 / span 1 / span 2;
+    // margin-left: 10%;
+    // // margin-right: 80%;
+    // padding-right: 20%;
+    padding: 3% 3%;
+    #card {
+      // overflow: scroll;
+      #dabDisplayer {
+        height: 200px;
+        // width: 200px;
 
-#dabvisual {
-  margin-left: 3%;
-  margin-top: 10%;
-  height: 140%;
-  width: 94%;
-  grid-area: 2 / 2 / span 1 / span 1;
-  border: $Border;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  img {
-    height: 30%;
-    width: 30%;
+        img {
+          pointer-events: none;
+          height: 5.9vw;
+          width: 5.9vw;
+          min-height: 100px;
+          min-width: 100px;
+        }
+      }
+    }
   }
 }

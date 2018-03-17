@@ -51,7 +51,7 @@ class Nice extends React.Component {
 
     this.handleClick = this.handleClick.bind(this);
     this.reset = this.reset.bind(this);
-    this.tier1buy = this.tier1buy.bind(this);
+    this.buyStand = this.buyStand.bind(this);
     this.cheat = this.cheat.bind(this);
     this.removeCost = this.removeCost.bind(this);
   }
@@ -67,17 +67,7 @@ class Nice extends React.Component {
     this.setState({ clicks: temp });
   }
 
-  tier1buy() {
-    function isOverflown(element) {
-      return (
-        element.scrollHeight > element.clientHeight ||
-        element.scrollWidth > element.clientWidth
-      );
-    }
-    if (isOverflown(DabDisplayer)) {
-      alert("nice");
-    }
-    // alert(isOverflown(DabDisplayer));
+  buyStand() {
     if (this.state.clicks >= 10 || this.state.noCost) {
       let femp = this.state.clicks;
       femp -= 10;
@@ -91,16 +81,10 @@ class Nice extends React.Component {
       this.setState({ dabsPerSecond: hemp });
       this.setState({ numberOfDabbers: gemp });
       this.autoDab = this.state.make(() => this.handleClick(), 4000);
-      // this.state.make(0, 0);
-      // this.autoDab = setInterval(() => this.handleClick(), 4000);
     }
   }
   reset() {
     this.setState({ clicks: 0 });
-    // for (let index = 0; index < this.state.numberOfDabbers; index++) {
-    // clearInterval(this.autoDab);
-    // this.autoDab.window.clearInterval(index);
-    // }
     this.state.clearAll();
   }
 
@@ -110,13 +94,13 @@ class Nice extends React.Component {
 
   render() {
     return (
-      <div id="bodygrid">
+      <div id="bodyGrid">
         {/* <Title /> */}
-        <div className="verticalline" />
-        <div id="displaycontainer">
+        <div className="verticalLine" />
+        <div id="displayContainer">
           <DabDisplayer
             numberOfDabbers={this.state.numberOfDabbers}
-            onClick={this.tier1buy}
+            Buy={this.buyStand}
             onOverflow={this.handleOverflow}
           />
         </div>
@@ -124,8 +108,8 @@ class Nice extends React.Component {
           clicks={this.state.clicks}
           dabsPerSecond={this.state.dabsPerSecond}
         />
-        <DabVisual />
-        <div id="buttongrid">
+        <DabVisual onClick={this.handleClick} />
+        <div id="buttonGrid">
           <Child onClick={this.handleClick} />
           <Reset
             onClick={this.reset}
