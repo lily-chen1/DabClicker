@@ -1,4 +1,6 @@
 import React from "react";
+import TransitionGroup from "react-transition-group/TransitionGroup";
+import anime from "animejs";
 
 export class Child extends React.Component {
   render() {

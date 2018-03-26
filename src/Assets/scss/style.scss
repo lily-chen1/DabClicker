@@ -13,6 +13,14 @@ body {
   overflow: hidden;
 }
 
+:root {
+  --img-height: 1;
+  --img-margins: 4;
+  --img-height-farm: 0.5;
+  --img-margins-farm: 2.5;
+  --test-color: #06c;
+}
+
 $Green: #4caf50;
 $Amber: #ffc107;
 $Grey: rgba(163, 161, 161, 0.233);
@@ -82,6 +90,7 @@ $Border: 2px solid $Grey;
   align-items: center;
   width: 50vw;
   height: 30vw;
+  cursor: pointer;
   img {
     pointer-events: none;
     height: 30%;
@@ -158,6 +167,9 @@ $Border: 2px solid $Grey;
   overflow-y: scroll;
   border: $Border;
   border-radius: 8px;
+  height: 84vh;
+  #background {
+  }
   .otherBuyButton {
     border-color: $Amber !important;
   }
@@ -177,19 +189,24 @@ $Border: 2px solid $Grey;
     // margin-left: 10%;
     // // margin-right: 80%;
     // padding-right: 20%;
-    padding: 3% 3%;
+    padding: 0 3%;
+    padding-top: 1.5%;
+    padding-bottom: 0;
     #card {
       // overflow: scroll;
       #dabDisplayer {
-        height: 200px;
+        // height: 200px;
         // width: 200px;
-
-        img {
+        // overflow: hidden;
+        #imgCounter {
           pointer-events: none;
-          height: 5.9vw;
-          width: 5.9vw;
-          min-height: 100px;
-          min-width: 100px;
+          height: calc(var(--img-height) * 0.2vw);
+          margin: calc(var(--img-margins) * 0.2vw);
+        }
+        #imgCounterFarm {
+          pointer-events: none;
+          height: calc(var(--img-height) * 0.15vw);
+          margin: calc(var(--img-margins) * 0.2vw);
         }
       }
     }
