@@ -251,7 +251,7 @@ class Nice extends React.Component {
       let femp = this.state.clicks;
       femp -= cost;
       let hemp = this.state.dabsPerSecond;
-      hemp += 0.25 * multi;
+      hemp += 2 * multi;
       let gemp = this.state.numberOfFarms;
       gemp += 1 * multi;
       if (!this.state.noCost) {
@@ -261,7 +261,7 @@ class Nice extends React.Component {
       this.setState({ numberOfFarms: gemp });
 
       for (let index = 0; index < multi; index++) {
-        this.state.makeFarm(() => this.handleClick(5), 4000);
+        this.state.makeFarm(() => this.handleClick(8), 4000);
       }
     }
   }
@@ -272,7 +272,7 @@ class Nice extends React.Component {
       let femp = this.state.clicks;
       femp += cost;
       let hemp = this.state.dabsPerSecond;
-      hemp -= 0.25 * multi;
+      hemp -= 2 * multi;
       let gemp = this.state.numberOfFarms;
       gemp -= 1 * multi;
       this.setState({ clicks: femp });
@@ -290,7 +290,7 @@ class Nice extends React.Component {
       let femp = this.state.clicks;
       femp -= cost;
       let hemp = this.state.dabsPerSecond;
-      hemp += 0.25 * multi;
+      hemp += 14 * multi;
       let gemp = this.state.numberOfFactories;
       gemp += 1 * multi;
       if (!this.state.noCost) {
@@ -299,7 +299,7 @@ class Nice extends React.Component {
       this.setState({ dabsPerSecond: hemp });
       this.setState({ numberOfFactories: gemp });
       for (let index = 0; index < multi; index++) {
-        this.state.makeFactory(() => this.handleClick(20), 4000);
+        this.state.makeFactory(() => this.handleClick(56), 4000);
       }
     }
   }
@@ -310,7 +310,7 @@ class Nice extends React.Component {
       let femp = this.state.clicks;
       femp += cost;
       let hemp = this.state.dabsPerSecond;
-      hemp -= 0.25 * multi;
+      hemp -= 14 * multi;
       let gemp = this.state.numberOfFactories;
       gemp -= 1 * multi;
       this.setState({ clicks: femp });
@@ -328,7 +328,7 @@ class Nice extends React.Component {
       let femp = this.state.clicks;
       femp -= cost;
       let hemp = this.state.dabsPerSecond;
-      hemp += 0.25 * multi;
+      hemp += 86 * multi;
       let gemp = this.state.numberOfOilRigs;
       gemp += 1 * multi;
       if (!this.state.noCost) {
@@ -337,18 +337,18 @@ class Nice extends React.Component {
       this.setState({ dabsPerSecond: hemp });
       this.setState({ numberOfOilRigs: gemp });
       for (let index = 0; index < multi; index++) {
-        this.state.makeFactory(() => this.handleClick(100), 4000);
+        this.state.makeFactory(() => this.handleClick(344), 4000);
       }
     }
   }
 
   sellOilRig(multi) {
     if (this.state.numberOfOilRigs >= multi) {
-      const cost = 1000 * multi;
+      const cost = 5000 * multi;
       let femp = this.state.clicks;
       femp += cost;
       let hemp = this.state.dabsPerSecond;
-      hemp -= 0.25 * multi;
+      hemp -= 86 * multi;
       let gemp = this.state.numberOfOilRigs;
       gemp -= 1 * multi;
       this.setState({ clicks: femp });
@@ -366,7 +366,7 @@ class Nice extends React.Component {
       let femp = this.state.clicks;
       femp -= cost;
       let hemp = this.state.dabsPerSecond;
-      hemp += 0.25 * multi;
+      hemp += 2688 * multi;
       let gemp = this.state.numberOfTimeMachines;
       gemp += 1 * multi;
       if (!this.state.noCost) {
@@ -375,18 +375,18 @@ class Nice extends React.Component {
       this.setState({ dabsPerSecond: hemp });
       this.setState({ numberOfTimeMachines: gemp });
       for (let index = 0; index < multi; index++) {
-        this.state.makeFactory(() => this.handleClick(20000), 4000);
+        this.state.makeFactory(() => this.handleClick(10752), 4000);
       }
     }
   }
 
   sellTimeMachine(multi) {
     if (this.state.numberOfTimeMachines >= multi) {
-      const cost = 1000 * multi;
+      const cost = 100000 * multi;
       let femp = this.state.clicks;
       femp += cost;
       let hemp = this.state.dabsPerSecond;
-      hemp -= 0.25 * multi;
+      hemp -= 2688 * multi;
       let gemp = this.state.numberOfTimeMachines;
       gemp -= 1 * multi;
       this.setState({ clicks: femp });
@@ -399,12 +399,14 @@ class Nice extends React.Component {
   }
 
   buyBlackHole(multi) {
-    const cost = 1000 * multi;
+    const cost = 10000000 * multi;
     if (this.state.clicks >= cost || this.state.noCost) {
       let femp = this.state.clicks;
       femp -= cost;
       let hemp = this.state.dabsPerSecond;
-      hemp += 0.25 * multi;
+      hemp +=
+        9999999999999999999999999999999999999999999999999999999999999999999999999 *
+        multi;
       let gemp = this.state.numberOfBlackHoles;
       gemp += 1 * multi;
       if (!this.state.noCost) {
@@ -414,7 +416,8 @@ class Nice extends React.Component {
       this.setState({ numberOfBlackHoles: gemp });
       for (let index = 0; index < multi; index++) {
         this.state.makeFactory(
-          () => this.handleClick(999999999999999999999999999999),
+          () =>
+            this.handleClick(999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999),
           4000
         );
       }
@@ -423,7 +426,7 @@ class Nice extends React.Component {
 
   sellBlackHole(multi) {
     if (this.state.numberOfBlackHoles >= multi) {
-      const cost = 1000 * multi;
+      const cost = 10000000 * multi;
       let femp = this.state.clicks;
       femp += cost;
       let hemp = this.state.dabsPerSecond;
@@ -486,14 +489,14 @@ class Nice extends React.Component {
           dabsPerSecond={this.state.dabsPerSecond}
         />
         <DabVisual onClick={this.handleClick} />
-        <div id="buttonGrid">
+        {/* <div id="buttonGrid">
           <Child onClick={this.handleClick} />
           <Reset
             onClick={this.reset}
             onClick2={this.cheat}
             onClick3={this.removeCost}
           />
-        </div>
+        </div> */}
       </div>
     );
   }

@@ -97,7 +97,8 @@ export class DabDisplayer extends React.Component {
 
             <h5 className="card-title d-inline">Cost: 50 dabs</h5>
             <p className="card-text">
-              A nice place to sell some freshly squeezed dabs.
+              A nice place to sell some freshly squeezed dabs. Adds 0.25 dabs
+              per second.
             </p>
             <BuyButton
               Buy={this.props.Buy}
@@ -177,7 +178,7 @@ export class FarmDisplayer extends React.Component {
               <h5 className="card-title d-inline">Cost: 250 dabs</h5>
               <p className="card-text">
                 Fresh, organic dabs grown with environmentally friendly
-                sustainable agriculture.
+                sustainable agriculture. Adds 2 dabs per second.
               </p>
               <BuyButton
                 borderColor="#4CAF50"
@@ -236,9 +237,10 @@ export class FactoryDisplayer extends React.Component {
                 className="d-inline"
               />
 
-              <h5 className="card-title d-inline">Cost: 1000 dabs</h5>
+              <h5 className="card-title d-inline">Cost: 1,000 dabs</h5>
               <p className="card-text">
-                Newly made dabs roll off the assembly lines.
+                Newly made dabs roll off the assembly lines. Adds 14 dabs per
+                second.
               </p>
               <BuyButton
                 borderColor="#607D8B"
@@ -297,9 +299,10 @@ export class OilRigDisplayer extends React.Component {
                 className="d-inline"
               />
 
-              <h5 className="card-title d-inline">Cost: 5000 dabs</h5>
+              <h5 className="card-title d-inline">Cost: 5,000 dabs</h5>
               <p className="card-text">
                 Harness the power of prehistoric liquidized dabs from eons ago.
+                Adds 86 dabs per second.
               </p>
               <BuyButton
                 borderColor="#FF5722"
@@ -358,9 +361,10 @@ export class TimeMachineDisplayer extends React.Component {
                 className="d-inline"
               />
 
-              <h5 className="card-title d-inline">Cost: 100000 dabs</h5>
+              <h5 className="card-title d-inline">Cost: 100,000 dabs</h5>
               <p className="card-text">
-                Travel back to a time when dabs were more plentiful.
+                Travel back to a time when dabs were more plentiful. Adds 2,688
+                dabs per second.
               </p>
               <BuyButton
                 borderColor="#03A9F4"
@@ -419,9 +423,12 @@ export class BlackHoleDisplayer extends React.Component {
                 className="d-inline"
               />
 
-              <h5 className="card-title d-inline">Cost: 5000000 dabs</h5>
+              <h5 className="card-title d-inline">Cost: 10,000,000 dabs</h5>
               <p className="card-text">
-                Harness the power of prehistoric liquidized dabs from eons ago.
+                Your technological superiority is exemplified by your ability to
+                create gravitational singularities from the ferocious energy of
+                your dabs. You become the god of dabs. Adds 420<sup>69</sup>{" "}
+                dabs per second.
               </p>
               <BuyButton
                 borderColor="#212121"

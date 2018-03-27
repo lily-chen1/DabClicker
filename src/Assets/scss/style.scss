@@ -34,7 +34,7 @@ $Border: 2px solid $Grey;
 #bodyGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 0.5fr 7fr 0.5fr;
+  grid-template-rows: 0.1fr 4fr;
 }
 
 #counter {
@@ -53,6 +53,11 @@ $Border: 2px solid $Grey;
   overflow: hidden;
   text-align: center;
   width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-flow: column;
   #clickDisplay {
     //   border: 4px red solid;
     // line-height: 150px;
@@ -79,34 +84,36 @@ $Border: 2px solid $Grey;
   // margin-left: 3%;
   // margin-top: 10%;
   margin: 0;
-  margin-bottom: -80vw;
+  // margin-bottom: -80vw;
   // height: 140%;
   // width: 94%;
-  grid-area: 2 / 2 / span 1 / span 1;
+  grid-area: 2 / 2 / span 2 / span 1;
   // border: $Border;
   border-bottom: $Border;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50vw;
-  height: 30vw;
+  width: 100%;
+  height: 100%;
   cursor: pointer;
   img {
     pointer-events: none;
     height: 30%;
     width: 30%;
+    // margin-bottom: 30%;
   }
 }
 
 #buttonGrid {
-  grid-area: 3 / 2 / span 1 / span 1;
+  grid-area: 1 / 1 / span 1 / span 1;
   display: flex;
   justify-content: center;
   align-items: center;
   // margin-top: 30%;
   margin: 0px;
   padding: 0px;
-  margin-top: -20vw;
+  // margin-top: -20vw;
+  // float: right;
   .dabButton {
     // margin: auto;
     // height: 20px;
@@ -210,5 +217,30 @@ $Border: 2px solid $Grey;
         }
       }
     }
+  }
+}
+
+@media (max-height: 680px),
+  (max-width: 600px),
+  screen and (orientation: portrait) {
+  :root {
+    font-size: 12px;
+    --img-height: 1.87;
+    --img-margins: 8;
+    --img-height-farm: 1;
+    --img-margins-farm: 5;
+  }
+  #displayContainer {
+    grid-area: 3 / 1 / span 1 / span all;
+  }
+  #dabVisual {
+    grid-area: 2 / 1 / span 1 / span all;
+    img {
+      margin-bottom: 0%;
+    }
+  }
+  #bodyGrid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.1fr 0.4fr 1fr;
   }
 }
