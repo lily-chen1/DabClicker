@@ -224,14 +224,28 @@ $Border: 2px solid $Grey;
   (max-width: 600px),
   screen and (orientation: portrait) {
   :root {
-    font-size: 12px;
+    font-size: 9px;
     --img-height: 1.87;
     --img-margins: 8;
     --img-height-farm: 1;
     --img-margins-farm: 5;
   }
+  #counter {
+    height: 80px;
+    #clickDisplay {
+      font-size: 2.5rem;
+    }
+    #perSecondDisplay {
+      font-size: 1.6rem;
+    }
+  }
   #displayContainer {
     grid-area: 3 / 1 / span 1 / span all;
+    height: 62.2vh;
+    #standImg {
+      height: 15px;
+      width: 25px;
+    }
   }
   #dabVisual {
     grid-area: 2 / 1 / span 1 / span all;
