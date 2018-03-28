@@ -220,9 +220,7 @@ $Border: 2px solid $Grey;
   }
 }
 
-@media (max-height: 680px),
-  (max-width: 600px),
-  screen and (orientation: portrait) {
+@media (max-width: 600px), screen and (orientation: portrait) {
   :root {
     font-size: 9px;
     --img-height: 1.87;

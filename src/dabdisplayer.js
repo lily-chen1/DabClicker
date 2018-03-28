@@ -97,8 +97,8 @@ export class DabDisplayer extends React.Component {
 
             <h5 className="card-title d-inline">Cost: 50 dabs</h5>
             <p className="card-text">
-              A nice place to sell some freshly squeezed dabs. Adds 0.25 dabs
-              per second.
+              A nice place to sell some freshly squeezed dabs.<br />
+              <i>Adds 0.25 dabs per second.</i>
             </p>
             <BuyButton
               Buy={this.props.Buy}
@@ -178,7 +178,7 @@ export class FarmDisplayer extends React.Component {
               <h5 className="card-title d-inline">Cost: 250 dabs</h5>
               <p className="card-text">
                 Fresh, organic dabs grown with environmentally friendly
-                sustainable agriculture. Adds 2 dabs per second.
+                sustainable agriculture. <br /> <i>Adds 2 dabs per second.</i>
               </p>
               <BuyButton
                 borderColor="#4CAF50"
@@ -239,8 +239,8 @@ export class FactoryDisplayer extends React.Component {
 
               <h5 className="card-title d-inline">Cost: 1,000 dabs</h5>
               <p className="card-text">
-                Newly made dabs roll off the assembly lines. Adds 14 dabs per
-                second.
+                Newly made dabs roll off the assembly lines.<br />
+                <i>Adds 14 dabs per second.</i>
               </p>
               <BuyButton
                 borderColor="#607D8B"
@@ -301,8 +301,9 @@ export class OilRigDisplayer extends React.Component {
 
               <h5 className="card-title d-inline">Cost: 5,000 dabs</h5>
               <p className="card-text">
-                Harness the power of prehistoric liquidized dabs from eons ago.
-                Adds 86 dabs per second.
+                Harness the power of prehistoric liquidized dabs from eons ago.{" "}
+                <br />
+                <i>Adds 86 dabs per second.</i>
               </p>
               <BuyButton
                 borderColor="#FF5722"
@@ -363,8 +364,8 @@ export class TimeMachineDisplayer extends React.Component {
 
               <h5 className="card-title d-inline">Cost: 100,000 dabs</h5>
               <p className="card-text">
-                Travel back to a time when dabs were more plentiful. Adds 2,688
-                dabs per second.
+                Travel back to a time when dabs were more plentiful.<br />
+                <i>Adds 2,688 dabs per second.</i>
               </p>
               <BuyButton
                 borderColor="#03A9F4"
@@ -427,8 +428,10 @@ export class BlackHoleDisplayer extends React.Component {
               <p className="card-text">
                 Your technological superiority is exemplified by your ability to
                 create gravitational singularities from the ferocious energy of
-                your dabs. You become the god of dabs. Adds 420<sup>69</sup>{" "}
-                dabs per second.
+                your dabs. You become the god of dabs. <br />
+                <i>
+                  Adds 420<sup>69</sup> dabs per second.
+                </i>
               </p>
               <BuyButton
                 borderColor="#212121"
