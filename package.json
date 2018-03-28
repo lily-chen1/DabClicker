@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://dabclicker.ml",
+  "homepage": "https://kinkmustard.github.io/DabClicker",
   "devDependencies": {
     "eslint": "^4.18.2"
   },
